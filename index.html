@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Orianne & Steeven | L'Union</title>
-    <!-- Importation de Great Vibes pour le côté attaché et Montserrat pour le reste -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,200;0,400;1,400;1,600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -24,7 +23,6 @@
             background: url('image.jpeg') no-repeat center center fixed;
             background-size: cover;
             color: var(--light-purple);
-            /* Application de l'italique par défaut */
             font-family: 'Montserrat', sans-serif;
             font-style: italic; 
             height: 100dvh;
@@ -60,11 +58,10 @@
         }
 
         h1 {
-            /* Police cursive "attachée" */
             font-family: 'Great Vibes', cursive;
             font-size: clamp(3.5rem, 15vw, 6rem);
             font-weight: 400;
-            font-style: normal; /* La police est déjà cursive par nature */
+            font-style: normal;
             margin-bottom: 15px;
             background: linear-gradient(to bottom, #fff, var(--light-purple));
             -webkit-background-clip: text;
@@ -100,7 +97,7 @@
 
         .label {
             font-size: 0.6rem;
-            text-transform: lowercase; /* Plus doux pour l'italique */
+            text-transform: lowercase;
             margin-top: 2px;
             color: var(--light-purple);
         }
@@ -116,24 +113,27 @@
             color: #fff;
         }
 
+        /* MISE À JOUR DU BOUTON EN BLANC */
         .enter-btn {
             display: block;
             width: 85%;
             max-width: 350px;
             padding: 18px 0;
-            background: linear-gradient(45deg, var(--deep-purple), var(--primary-purple));
-            color: #fff !important;
+            background: rgba(255, 255, 255, 0.95); /* Fond blanc */
+            color: var(--deep-purple) !important; /* Texte violet foncé */
             text-decoration: none;
-            font-size: 1.2rem;
-            /* Style attaché pour le bouton aussi */
+            font-size: 1.4rem;
             font-family: 'Great Vibes', cursive;
+            font-style: normal;
             border-radius: 50px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
             transition: all 0.3s ease;
+            border: none;
         }
 
         .enter-btn:active {
             transform: scale(0.95);
+            background: #fff;
         }
 
         @keyframes fadeIn {
