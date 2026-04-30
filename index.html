@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Orianne & Steeven | L'Union</title>
-    <!-- Importation de Dancing Script pour remplacer Great Vibes -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --fuchsia: #D82D7E;
-            --coral: #FF7F50;
-            --amber: #FFB347;
+            /* Palette de violets harmonieuse */
+            --primary-purple: #8E44AD; /* Violet Royal */
+            --deep-purple: #6C3483;    /* Violet Foncé */
+            --light-purple: #D2B4DE;   /* Violet Clair pour le texte */
             --gold-light: #f4e4bc;
         }
 
@@ -22,8 +22,10 @@
         }
 
         body {
-            background-color: #0a0a0a;
-            color: var(--gold-light);
+            /* Remplacement du noir par votre image */
+            background: url('image.png') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--light-purple); /* Écriture en violet clair pour la lisibilité */
             font-family: 'Montserrat', sans-serif;
             height: 100dvh;
             width: 100vw;
@@ -35,15 +37,16 @@
             position: relative;
         }
 
-        .bg-image {
+        /* Overlay pour s'assurer que le texte reste lisible sur l'image */
+        body::before {
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
-            filter: brightness(0.4);
-            background: url('bisousfront.jpg') no-repeat center top / cover;
+            background: rgba(0, 0, 0, 0.4); /* Filtre sombre léger */
+            z-index: 0;
         }
 
         .intro-container {
@@ -59,14 +62,15 @@
         }
 
         h1 {
-            font-family: 'Dancing Script', cursive; /* Nouvelle police appliquée ici */
+            font-family: 'Dancing Script', cursive;
             font-size: clamp(3.2rem, 13vw, 5.2rem);
             font-weight: 700;
             margin-bottom: 10px;
-            background: linear-gradient(to bottom, #fff, var(--gold-light));
+            /* Dégradé de violets pour le titre */
+            background: linear-gradient(to bottom, #fff, var(--light-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 20px rgba(0,0,0,0.8);
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
         }
 
         .countdown-container {
@@ -79,8 +83,8 @@
         .unit {
             width: 60px;
             height: 60px;
-            background: rgba(0,0,0,0.6);
-            border: 1px solid rgba(244,228,188,0.2);
+            background: rgba(108, 52, 131, 0.4); /* Fond violet transparent */
+            border: 1px solid rgba(210, 180, 222, 0.3);
             backdrop-filter: blur(8px);
             border-radius: 4px;
             display: flex;
@@ -100,16 +104,18 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             margin-top: 4px;
+            color: var(--light-purple);
         }
 
         .date {
             font-size: 0.9rem;
             letter-spacing: 5px;
             padding: 10px 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(210, 180, 222, 0.3);
+            border-bottom: 1px solid rgba(210, 180, 222, 0.3);
             min-width: 230px;
             margin-bottom: 50px;
+            color: white;
         }
 
         .enter-btn {
@@ -117,7 +123,8 @@
             width: 90%;
             max-width: 400px;
             padding: 22px 0;
-            background: linear-gradient(45deg, var(--fuchsia), var(--coral));
+            /* Bouton avec dégradé violet */
+            background: linear-gradient(45deg, var(--deep-purple), var(--primary-purple));
             color: #fff;
             text-decoration: none;
             font-size: 1rem;
@@ -125,10 +132,10 @@
             text-transform: uppercase;
             font-weight: 600;
             border-radius: 50px;
-            box-shadow: 0 15px 35px rgba(216,45,126,0.5);
+            box-shadow: 0 10px 25px rgba(108, 52, 131, 0.5);
             position: relative;
             overflow: hidden;
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .enter-btn:active {
@@ -142,7 +149,7 @@
             left: -60%;
             width: 20%;
             height: 200%;
-            background: rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.2);
             transform: rotate(30deg);
             animation: shine 3s infinite;
         }
@@ -165,8 +172,6 @@
     </style>
 </head>
 <body>
-
-<div class="bg-image"></div>
 
 <div class="intro-container">
     <h1>Orianne & Steeven</h1>
