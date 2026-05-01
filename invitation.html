@@ -46,8 +46,25 @@
         .btn { padding: 11px 20px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; font-family: "Montserrat", sans-serif; transition: all 0.2s; background: rgba(255,255,255,0.75); }
         .btn:hover { background: var(--gold); color: #fff; }
 
-        .parents-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 15px 0; text-align: left; font-size: 0.86rem; line-height: 1.6; width: 100%; }
-        .parents-side { padding: 12px; border: 1px solid #EBE3D3; background: rgba(255,255,255,0.78); }
+        .parents-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; /* Garde deux colonnes égales */
+    gap: 8px; 
+    margin: 15px 0; 
+    width: 100%; 
+    font-size: 0.86rem; 
+    line-height: 1.6; 
+}
+/* Le premier bloc reste aligné à gauche */
+.parents-grid div:first-child {
+    text-align: left;
+}
+
+/* Le deuxième bloc (à droite) se décale vers la droite */
+.parents-grid div:last-child {
+    text-align: right;
+}
+.parents-side { padding: 12px; border: 1px solid #EBE3D3; background: rgba(255,255,255,0.78); }
         .parents-side .label { font-size: 0.68rem; color: #bbb; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; font-family: "Montserrat", sans-serif; display: block; }
         .parents-side .grands { font-size: 0.76rem; color: #bbb; display: block; margin-bottom: 4px; }
 
@@ -107,12 +124,13 @@
             <hr class="separator">
             <div class="info-block">
                 <b>Jeudi 24 Juillet 2026</b> &#224; <b>13h45</b><br>
-                <b>Mairie de Saint-Mand&#233;</b>
+                <b>Mairie de Saint-Mand&#233;</b><br>
+                10 place Charles Digeon, 94160 Saint-Mand&#233;
             </div>
             <p class="italic-note">&#192; l&#8217;issue de la c&#233;r&#233;monie, nous serons heureux de partager avec vous un moment de c&#233;l&#233;bration.</p>
             <div class="btn-row">
                 <a href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20260724T114500Z%0ADTEND:20260724T140000Z%0ASUMMARY:Mariage%20Orianne%20%26%20Steeven%20-%20Mairie%0ALOCATION:Mairie%20de%20Saint-Mand%C3%A9%0AEND:VEVENT%0AEND:VCALENDAR" download="mairie-orianne-steeven.ics" class="btn">&#128197; Bloquer</a>
-                <a href="https://waze.com/ul?q=Mairie+de+Saint-Mande" target="_blank" class="btn">&#128205; Waze</a>
+                <a href="https://waze.com/ul?q=10+place+Charles+Digeon+94160+Saint-Mande" target="_blank" class="btn">&#128205; Waze</a>
             </div>
         </div>
     </section>
@@ -130,14 +148,12 @@
             <h3>Houppa &amp; Soir&#233;e</h3>
 
             <div class="parents-grid">
-                <div class="parents-side">
-                    <span class="label">C&#244;t&#233; Orianne</span>
-                    <span class="grands">Mme Henriette Nataf<br>Martine &amp; Eric Tartour</span>
+                <div>
+                    <span class="grands">Mme Henriette Nataf</span><br>
                     <b>Martine &amp; Eric Tartour</b>
                 </div>
-                <div class="parents-side">
-                    <span class="label">C&#244;t&#233; Steeven</span>
-                    <span class="grands">Mme Paulette Bourak<br>Mme Arlette Driquez</span>
+                <div>
+                    <span class="grands">Mme Paulette Bourak<br>Mme Arlette Driquez</span><br>
                     <b>Yael &amp; Herv&#233; Driquez</b>
                 </div>
             </div>
@@ -147,12 +163,11 @@
             </p>
 
             <div class="couple-names">Orianne &amp; Steeven</div>
-            <div class="couple-names-heb">&#1505;&#1496;&#1497;&#1489;&#1503; &amp; &#1488;&#1493;&#1512;&#1497;&#1488;&#1503;</div>
-
+            <div class="couple-names-heb">שמעון &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; כוכבה</div>
             <hr class="separator">
 
             <div class="info-block">
-                <b>Dimanche 27 Juillet 2026</b> &#224; <b>18h00</b><br>
+                <b>Dimanche 27 Juillet 2026</b> &#224; <b>17H30</b><br>
                 <b>Le Salon White</b>
             </div>
 
