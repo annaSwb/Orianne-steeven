@@ -7,9 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,200;0,400;1,400;1,600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-purple: #8E44AD; 
-            --deep-purple: #6C3483;    
-            --light-purple: #D2B4DE;   
+            --primary-purple: #8E44AD;
+            --deep-purple: #6C3483;
+            --light-purple: #D2B4DE;
         }
 
         * {
@@ -24,7 +24,7 @@
             background-size: cover;
             color: var(--light-purple);
             font-family: 'Montserrat', sans-serif;
-            font-style: italic; 
+            font-style: italic;
             height: 100dvh;
             width: 100vw;
             overflow: hidden;
@@ -42,7 +42,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5); 
+            background: rgba(0, 0, 0, 0.5);
             z-index: 0;
         }
 
@@ -57,47 +57,11 @@
             align-items: center;
         }
 
-        h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: clamp(3rem, 12vw, 5rem);
-            font-weight: 400;
-            font-style: normal;
-            margin-bottom: 25px;
-            display: flex;
-            flex-direction: column;
-            line-height: 0.9;
+        .names-svg {
             width: 100%;
-            max-width: 500px;
-            overflow: visible; /* Force l'affichage de tout ce qui dépasse */
-        }
-
-        .name-orianne {
-            align-self: flex-start;
-            background: linear-gradient(to bottom, #fff, var(--light-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            /* CORRECTION DÉFINITIVE POUR LE O */
-            padding-left: 15px; 
-            padding-right: 15px;
-            margin-left: -15px; /* Compense le padding pour l'alignement */
-        }
-
-        .ampersand {
-            font-size: 0.5em;
-            opacity: 0.8;
-            margin: -10px 0;
-            color: #fff;
-        }
-
-        .name-steeven {
-            align-self: flex-end;
-            background: linear-gradient(to bottom, #fff, var(--light-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            /* CORRECTION DÉFINITIVE POUR LE S */
-            padding-left: 15px;
-            padding-right: 15px;
-            margin-right: -15px; /* Compense le padding pour l'alignement */
+            max-width: 520px;
+            overflow: visible;
+            margin-bottom: 25px;
         }
 
         .countdown-container {
@@ -124,6 +88,7 @@
             font-size: 1.4rem;
             font-weight: 600;
             color: #fff;
+            font-style: normal;
         }
 
         .label {
@@ -171,21 +136,60 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
-        @media (max-width: 480px) {
-            h1 { font-size: 3.5rem; }
-        }
     </style>
 </head>
 <body>
 
 <div class="intro-container">
-    <h1>
-        <span class="name-orianne">Orianne</span>
-        <span class="ampersand">&</span>
-        <span class="name-steeven">Steeven</span>
-    </h1>
-    
+
+    <!--
+        Les deux prénoms utilisent text-anchor="start" avec textLength fixe.
+        - Orianne part de x="10", occupe 260px → finit à x=270
+        - Steeven part de x="320", occupe 260px → finit à x=580
+        Le viewBox (0 0 600 220) englobe tout avec 10-20px de marge de chaque côté.
+        Pas de text-anchor="end" qui cause des bugs de clipping sur Safari/WebKit.
+    -->
+    <svg class="names-svg" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="nameGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%"   stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#D2B4DE"/>
+            </linearGradient>
+        </defs>
+
+        <!-- Orianne : démarre à x=10, largeur 260px → finit à 270 -->
+        <text
+            x="10" y="88"
+            font-family="'Great Vibes', cursive"
+            font-size="88"
+            fill="url(#nameGrad)"
+            text-anchor="start"
+            textLength="260"
+            lengthAdjust="spacingAndGlyphs"
+        >Orianne</text>
+
+        <!-- & centré -->
+        <text
+            x="300" y="138"
+            font-family="'Great Vibes', cursive"
+            font-size="46"
+            fill="#ffffff"
+            fill-opacity="0.8"
+            text-anchor="middle"
+        >&amp;</text>
+
+        <!-- Steeven : démarre à x=320, largeur 260px → finit à 580 -->
+        <text
+            x="320" y="198"
+            font-family="'Great Vibes', cursive"
+            font-size="88"
+            fill="url(#nameGrad)"
+            text-anchor="start"
+            textLength="260"
+            lengthAdjust="spacingAndGlyphs"
+        >Steeven</text>
+    </svg>
+
     <div class="countdown-container" id="timer">
         <div class="unit"><span class="num" id="days">00</span><span class="label">jours</span></div>
         <div class="unit"><span class="num" id="hours">00</span><span class="label">heures</span></div>
@@ -216,7 +220,7 @@
             document.getElementById("mins").innerText = m.toString().padStart(2, "0");
             document.getElementById("secs").innerText = s.toString().padStart(2, "0");
         } else {
-            document.getElementById("timer").innerHTML = "<h2 style='font-family:Great Vibes;color:white;'>C'est le grand jour !</h2>";
+            document.getElementById("timer").innerHTML = "<h2 style='font-family:Great Vibes;color:white;font-style:normal;'>C'est le grand jour !</h2>";
         }
     }
 
