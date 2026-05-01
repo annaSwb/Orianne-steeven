@@ -57,7 +57,7 @@
             align-items: center;
         }
 
-        /* STYLE POUR L'EFFET ESCALIER */
+        /* STYLE POUR L'EFFET ESCALIER CORRIGÉ POUR NE PAS COUPER */
         h1 {
             font-family: 'Great Vibes', cursive;
             font-size: clamp(3rem, 12vw, 5rem);
@@ -69,6 +69,8 @@
             line-height: 0.9;
             width: 100%;
             max-width: 500px;
+            /* CORRECTION: Ajout de padding latéral pour laisser respirer le gradient et l'ombre */
+            padding: 0 15px; 
         }
 
         .name-orianne {
@@ -76,7 +78,8 @@
             background: linear-gradient(to bottom, #fff, var(--light-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            padding-left: 5%;
+            /* CORRECTION: Marge intérieure pour le "O" */
+            padding-left: 5px; 
         }
 
         .ampersand {
@@ -91,7 +94,8 @@
             background: linear-gradient(to bottom, #fff, var(--light-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            padding-right: 5%;
+            /* CORRECTION: Marge intérieure pour le "S" */
+            padding-right: 5px;
         }
 
         .countdown-container {
