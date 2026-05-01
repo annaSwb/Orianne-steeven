@@ -102,25 +102,26 @@
             color: var(--light-purple);
         }
 
+        /* MODIFICATION : DATE PLUS GRANDE */
         .date {
             font-family: 'Great Vibes', cursive;
-            font-size: 1.8rem;
+            font-size: clamp(2.2rem, 8vw, 3rem); /* Taille augmentée */
             padding: 15px 0;
             border-top: 1px solid rgba(255,255,255,0.2);
             border-bottom: 1px solid rgba(255,255,255,0.2);
-            min-width: 250px;
+            min-width: 280px;
             margin-bottom: 40px;
             color: #fff;
+            font-style: normal; /* Plus lisible en Great Vibes */
         }
 
-        /* MISE À JOUR DU BOUTON EN BLANC */
         .enter-btn {
             display: block;
             width: 85%;
             max-width: 350px;
             padding: 18px 0;
-            background: rgba(255, 255, 255, 0.95); /* Fond blanc */
-            color: var(--deep-purple) !important; /* Texte violet foncé */
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--deep-purple) !important;
             text-decoration: none;
             font-size: 1.4rem;
             font-family: 'Great Vibes', cursive;
@@ -143,7 +144,6 @@
 
         @media (max-width: 480px) {
             h1 { font-size: 4rem; }
-            .date { font-size: 1.5rem; }
         }
     </style>
 </head>
