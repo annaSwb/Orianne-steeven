@@ -57,16 +57,41 @@
             align-items: center;
         }
 
+        /* STYLE POUR L'EFFET ESCALIER */
         h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: clamp(3.5rem, 15vw, 6rem);
+            font-size: clamp(3rem, 12vw, 5rem);
             font-weight: 400;
             font-style: normal;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            line-height: 0.9;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .name-orianne {
+            align-self: flex-start;
             background: linear-gradient(to bottom, #fff, var(--light-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            padding-left: 5%;
+        }
+
+        .ampersand {
+            font-size: 0.5em;
+            opacity: 0.8;
+            margin: -10px 0;
+            color: #fff;
+        }
+
+        .name-steeven {
+            align-self: flex-end;
+            background: linear-gradient(to bottom, #fff, var(--light-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding-right: 5%;
         }
 
         .countdown-container {
@@ -102,17 +127,16 @@
             color: var(--light-purple);
         }
 
-        /* MODIFICATION : DATE PLUS GRANDE */
         .date {
             font-family: 'Great Vibes', cursive;
-            font-size: clamp(2.2rem, 8vw, 3rem); /* Taille augmentée */
+            font-size: clamp(2.2rem, 8vw, 3rem);
             padding: 15px 0;
             border-top: 1px solid rgba(255,255,255,0.2);
             border-bottom: 1px solid rgba(255,255,255,0.2);
             min-width: 280px;
             margin-bottom: 40px;
             color: #fff;
-            font-style: normal; /* Plus lisible en Great Vibes */
+            font-style: normal;
         }
 
         .enter-btn {
@@ -143,14 +167,18 @@
         }
 
         @media (max-width: 480px) {
-            h1 { font-size: 4rem; }
+            h1 { font-size: 3.5rem; }
         }
     </style>
 </head>
 <body>
 
 <div class="intro-container">
-    <h1>Orianne & Steeven</h1>
+    <h1>
+        <span class="name-orianne">Orianne</span>
+        <span class="ampersand">&</span>
+        <span class="name-steeven">Steeven</span>
+    </h1>
     
     <div class="countdown-container" id="timer">
         <div class="unit"><span class="num" id="days">00</span><span class="label">jours</span></div>
